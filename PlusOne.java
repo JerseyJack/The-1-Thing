@@ -97,6 +97,9 @@ public class PlusOne implements ActionListener
         enterButton.setForeground(Color.WHITE);
         enterButton.setBackground(niceBlack);
 
+        //Add action listener
+        enterButton.addActionListener(this);
+
         //Add to panel
         numberPanel.add(enterButton);
 
@@ -127,11 +130,11 @@ public class PlusOne implements ActionListener
 
     public void actionPerformed(ActionEvent event)
     {
-        String initialNumber;
-        Integer number;
-
         if (event.getSource() == enterButton)
         {
+            String initialNumber;
+            Integer number;
+
             initialNumber = numberField.getText();
             number = Integer.valueOf(initialNumber);
 
