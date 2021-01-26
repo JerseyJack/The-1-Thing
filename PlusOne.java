@@ -31,12 +31,12 @@ public class PlusOne implements ActionListener
 
     public PlusOne()
     {
-        JFrame mainFrame = new JFrame("Know Your Times Tables");
+        mainFrame = new JFrame("Know Your Times Tables");
 
         //PANELS
         //Build panels
-        JPanel mainPanel = new JPanel();
-        JPanel numberPanel = new JPanel();
+        mainPanel = new JPanel();
+        numberPanel = new JPanel();
 
         //Set panel layout
         mainPanel.setLayout(null);
@@ -57,8 +57,8 @@ public class PlusOne implements ActionListener
 
         //LABELS
         //Build labels
-        JLabel titleLabel = new JLabel("Times Tables");
-        JLabel enterLabel = new JLabel("Enter a number begin:");
+        titleLabel = new JLabel("Times Tables");
+        enterLabel = new JLabel("Enter a number begin:");
 
         //Set bounds
         titleLabel.setBounds(5, 10, 200, 35);
@@ -74,7 +74,7 @@ public class PlusOne implements ActionListener
 
         //TEXT FIELD
         //Build text field
-        JTextField numberField = new JTextField();
+        numberField = new JTextField();
 
         //Set bounds
         numberField.setBounds(10, 80, 200, 20);
@@ -88,7 +88,7 @@ public class PlusOne implements ActionListener
 
         //BUTTON
         //Build
-        JButton enterButton = new JButton("Go");
+        enterButton = new JButton("Go");
 
         //Set bounds
         enterButton.setBounds(210, 80, 50, 20);
@@ -130,17 +130,18 @@ public class PlusOne implements ActionListener
 
     public void actionPerformed(ActionEvent event)
     {
+        String initialNumber;
+        Integer number;
+
         if (event.getSource() == enterButton)
         {
-            String initialNumber;
-            Integer number;
-
             initialNumber = numberField.getText();
             number = Integer.valueOf(initialNumber);
+            int index = 1;
 
             while (number < 1000000)
             {
-                number += number;
+                index *= number;
                 System.out.println(number);
             }
         }
